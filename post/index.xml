@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 蓉漂Java小陈</title>
+    <link>https://ChengRangXianSheng.github.io/post/</link>
+    <description>Recent content in Posts on 蓉漂Java小陈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 06 Oct 2019 12:30:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://ChengRangXianSheng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>我的第一篇博客</title>
+      <link>https://ChengRangXianSheng.github.io/post/blog/</link>
+      <pubDate>Sun, 06 Oct 2019 12:30:46 +0800</pubDate>
+      
+      <guid>https://ChengRangXianSheng.github.io/post/blog/</guid>
+      <description>此刻呢，我怀着无比沉重的心情写下自己人生中第一篇正式博客。 先来给大家简单的自我介绍下吧，我叫陈让，毕业于某双非普通二本师范院校，大学里面呢  就读的也是软件工程专业，比较幸运的是呢。大学里学校主要的也是培养的java开发方向，开了
+很多java方面的课程，关于java的很多方面也都有涉及到，大三呢自己也选修的Andorid开发。
+想去了解下移动端开发。自己呢也是相对于其他编程语言更喜欢java。哪c++来说吧，自己也学
+习过这两篇语言。首先就语言的难易程度来说，java是要易于c++的。java摒弃了c++里指针这个
+复杂的概念，而且java的一次编译,到处运行，自带的多线程机制都比c++要优秀得多。但是呢，
+c++较java而言呢，速率上是领先java的，大家总所周知，java是需要编译成字节码文件才能被
+运行的，但是c++则直接可以运行，所以在效率上c++领先于java。
+就简单说到这里，其实呢，分享和积累也是java成长的很重要一部分，希望能和大家一起来  学好java。</description>
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://ChengRangXianSheng.github.io/post/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChengRangXianSheng.github.io/post/markdown-syntax/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>https://ChengRangXianSheng.github.io/post/placeholder-text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChengRangXianSheng.github.io/post/placeholder-text/</guid>
+      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
+pectora summo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>https://ChengRangXianSheng.github.io/post/emoji-support/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChengRangXianSheng.github.io/post/emoji-support/</guid>
+      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://ChengRangXianSheng.github.io/post/test/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChengRangXianSheng.github.io/post/test/</guid>
+      <description>&lt;p&gt;Just a test.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
