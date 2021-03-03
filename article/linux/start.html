@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux系统运维 | gp&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="学而时习之不亦说乎，有朋至远方来不亦乐乎。">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.203330ab.css" as="style"><link rel="preload" href="/blog/assets/js/app.0cb9d00b.js" as="script"><link rel="preload" href="/blog/assets/js/2.d26acfa2.js" as="script"><link rel="preload" href="/blog/assets/js/14.0983790a.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.a931bf2e.js"><link rel="prefetch" href="/blog/assets/js/11.353f15d9.js"><link rel="prefetch" href="/blog/assets/js/12.f0ad97c6.js"><link rel="prefetch" href="/blog/assets/js/13.b5ab490c.js"><link rel="prefetch" href="/blog/assets/js/15.f1732e7b.js"><link rel="prefetch" href="/blog/assets/js/16.b64c0061.js"><link rel="prefetch" href="/blog/assets/js/3.7989070e.js"><link rel="prefetch" href="/blog/assets/js/4.3d74b074.js"><link rel="prefetch" href="/blog/assets/js/5.300cf98d.js"><link rel="prefetch" href="/blog/assets/js/6.be2c6426.js"><link rel="prefetch" href="/blog/assets/js/7.3826a072.js"><link rel="prefetch" href="/blog/assets/js/8.9eb61706.js"><link rel="prefetch" href="/blog/assets/js/9.d3e328ad.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.203330ab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">gp's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/article/JavaScript/rule.html" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/blog/aboutMe.html" class="nav-link">
+  Resume
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/article/JavaScript/rule.html" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/blog/aboutMe.html" class="nav-link">
+  Resume
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/article/JavaScript/rule.html" class="sidebar-link">前端代码规范</a></li><li><a href="/blog/article/JavaScript/QA-daily.html" class="sidebar-link">每日一题  💌</a></li><li><a href="/blog/article/JavaScript/node.html" class="sidebar-link">javascript常用方法</a></li><li><a href="/blog/article/Other/git.html" class="sidebar-link">git的使用说明</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux系统运维"><a href="#linux系统运维" class="header-anchor">#</a> Linux系统运维</h1> <h2 id="nginx-安装"><a href="#nginx-安装" class="header-anchor">#</a> nginx 安装</h2> <h3 id="开放端口"><a href="#开放端口" class="header-anchor">#</a> 开放端口</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>firewall-cmd --add-port<span class="token operator">=</span><span class="token number">80</span>/tcp --permanent <span class="token operator">&amp;&amp;</span> firewall-cmd --add-port<span class="token operator">=</span><span class="token number">443</span>/tcp --permanent <span class="token operator">&amp;&amp;</span>  firewall-cmd --reload
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="上传安装包"><a href="#上传安装包" class="header-anchor">#</a> 上传安装包</h3> <p>安装包下载路径：<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">http://nginx.org/en/download.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 本次安装版本1.19.5</p> <p>下载好后上传到服务器的/data目录</p> <p>需要安装的服务器有：</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <p>安装过程中如缺少 什么依赖会在*./configure*阶段进行说明，到时候根据缺少的安装</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>yum update -y <span class="token comment"># 系统缺少包需要先升级</span>
+<span class="token builtin class-name">cd</span> /data
+<span class="token function">tar</span> -xzvf nginx-1.19.5.tar.gz <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> /data/nginx 
+yum <span class="token function">install</span> -y pcre-devel openssl-devel
+<span class="token builtin class-name">cd</span> /data/nginx-1.19.5 <span class="token operator">&amp;&amp;</span> ./configure --prefix<span class="token operator">=</span>/data/nginx/ --sbin-path<span class="token operator">=</span>/data/nginx/nginx --conf-path<span class="token operator">=</span>/data/nginx/nginx.conf --pid-path<span class="token operator">=</span>/data/nginx/nginx.pid --with-http_ssl_module  --with-stream --with-stream_ssl_module --with-http_stub_status_module
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/data/nginx/nginx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="https证书安装"><a href="#https证书安装" class="header-anchor">#</a> https证书安装</h3> <p>上传证书文件到服务器的/data目录，执行解压命令到nginx目录</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> -p /data/nginx/ssl/ <span class="token operator">&amp;&amp;</span> <span class="token function">unzip</span> /data/4729317__zhenergy.com.cn_nginx.zip -d /data/nginx/ssl/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="修改nginx配置文件"><a href="#修改nginx配置文件" class="header-anchor">#</a> 修改nginx配置文件</h3> <p>nginx配置文件如下：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#user  nobody;</span>
+worker_processes  <span class="token number">16</span><span class="token punctuation">;</span>
+worker_rlimit_nofile <span class="token number">20960</span><span class="token punctuation">;</span>
+events <span class="token punctuation">{</span>
+    accept_mutex on<span class="token punctuation">;</span>
+    accept_mutex_delay 500ms<span class="token punctuation">;</span>
+    worker_connections  <span class="token number">1024</span><span class="token punctuation">;</span>
+    multi_accept on<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+http <span class="token punctuation">{</span>
+    include       mime.types<span class="token punctuation">;</span>
+    default_type  application/octet-stream<span class="token punctuation">;</span>
+    <span class="token comment"># 后台网关服务</span>
+    upstream unionServer <span class="token punctuation">{</span>
+        server <span class="token number">10.154</span>.73.11:8035 <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        server <span class="token number">10.154</span>.73.12:8035 <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        server <span class="token number">10.154</span>.73.13:8035 <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment"># 文件预览服务器</span>
+    upstream onlinePreview <span class="token punctuation">{</span>
+       server <span class="token number">10.154</span>.73.11:7205 <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    sendfile        on<span class="token punctuation">;</span>
+    keepalive_timeout  <span class="token number">65</span><span class="token punctuation">;</span>
+    <span class="token function">gzip</span>  on<span class="token punctuation">;</span>
+    server <span class="token punctuation">{</span>
+        listen       <span class="token number">80</span><span class="token punctuation">;</span>
+        server_name  localhost<span class="token punctuation">;</span>
+        <span class="token comment">#charset koi8-r;</span>
+        <span class="token comment">#access_log  logs/host.access.log  main;</span>
+        add_header strict-transport-security max-age<span class="token operator">=</span><span class="token number">15552000</span><span class="token punctuation">;</span>
+        add_header x-content-type-options nosniff<span class="token punctuation">;</span>
+        add_header x-dns-prefetch-control off<span class="token punctuation">;</span>
+        add_header x-download-options noopen<span class="token punctuation">;</span>
+        <span class="token comment">#add_header x-frame-options SAMEORIGIN;</span>
+        proxy_set_header Upgrade <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span>
+        proxy_set_header Connection <span class="token string">&quot;upgrade&quot;</span><span class="token punctuation">;</span>
+        location / <span class="token punctuation">{</span>
+            root   html<span class="token punctuation">;</span>
+            index  index.html index.htm<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        location /api/ <span class="token punctuation">{</span>
+            proxy_pass http://unionServer/<span class="token punctuation">;</span>
+            proxy_redirect     off<span class="token punctuation">;</span>
+            proxy_set_header   Host             <span class="token variable">$http_host</span><span class="token punctuation">;</span>
+            proxy_set_header   X-Real-IP        <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+            proxy_set_header   X-Forwarded-For  <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+            proxy_set_header Upgrade <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span>
+            proxy_set_header Connection <span class="token string">&quot;upgrade&quot;</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+        error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span>
+        location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+            root   html<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># HTTPS server</span>
+    <span class="token comment">#</span>
+    server <span class="token punctuation">{</span>
+        listen       <span class="token number">443</span> ssl<span class="token punctuation">;</span>
+        server_name  zhenergy.com.cn<span class="token punctuation">;</span>
+        ssl_certificate      /data/nginx/ssl/4729317__zhenergy.com.cn.pem<span class="token punctuation">;</span>
+        ssl_certificate_key   /data/nginx/ssl/4729317__zhenergy.com.cn.key<span class="token punctuation">;</span>
+        ssl_session_cache    shared:SSL:1m<span class="token punctuation">;</span>
+        ssl_session_timeout  5m<span class="token punctuation">;</span>
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2<span class="token punctuation">;</span>
+	    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:<span class="token operator">!</span>NULL:<span class="token operator">!</span>aNULL:<span class="token operator">!</span>MD5:<span class="token operator">!</span>ADH:<span class="token operator">!</span>RC4<span class="token punctuation">;</span>
+        ssl_prefer_server_ciphers  on<span class="token punctuation">;</span>
+
+
+        add_header strict-transport-security max-age<span class="token operator">=</span><span class="token number">15552000</span><span class="token punctuation">;</span>
+        add_header x-content-type-options nosniff<span class="token punctuation">;</span>
+        add_header x-dns-prefetch-control off<span class="token punctuation">;</span>
+        add_header x-download-options noopen<span class="token punctuation">;</span>
+        <span class="token comment">#add_header x-frame-options SAMEORIGIN;</span>
+        proxy_set_header Upgrade <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span>
+        proxy_set_header Connection <span class="token string">&quot;upgrade&quot;</span><span class="token punctuation">;</span>
+
+        location / <span class="token punctuation">{</span>
+            root   html<span class="token punctuation">;</span>
+            index  index.html index.htm<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        location /api/ <span class="token punctuation">{</span>
+            proxy_pass http://unionServer/<span class="token punctuation">;</span>
+            proxy_redirect     off<span class="token punctuation">;</span>
+            proxy_set_header   Host             <span class="token variable">$http_host</span><span class="token punctuation">;</span>
+            proxy_set_header   X-Real-IP        <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+            proxy_set_header   X-Forwarded-For  <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+            proxy_set_header Upgrade <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span>
+            proxy_set_header Connection <span class="token string">&quot;upgrade&quot;</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+
+
+       location /onlinePreview/ <span class="token punctuation">{</span>
+            proxy_pass http://onlinePreview/onlinePreview/<span class="token punctuation">;</span>
+            proxy_redirect     off<span class="token punctuation">;</span>
+            proxy_set_header   Host             <span class="token variable">$http_host</span><span class="token punctuation">;</span>
+            proxy_set_header   X-Real-IP        <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+            proxy_set_header   X-Forwarded-For  <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br></div></div><h3 id="重新加载配置"><a href="#重新加载配置" class="header-anchor">#</a> 重新加载配置</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/data/nginx/nginx -s reload
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="jdk安装"><a href="#jdk安装" class="header-anchor">#</a> jdk安装</h2> <p>本次安装的jdk版本为<em>1.8.211</em></p> <p>下载好后上传到服务器的/data目录</p> <p>需要安装的服务器有：</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="安装-2"><a href="#安装-2" class="header-anchor">#</a> 安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> /usr/local/lib/java-1.8 -p
+<span class="token function">tar</span> -xzvf /data/jdk-8u211-linux-x64.tar.gz -C /usr/local/lib/java-1.8
+<span class="token function">ln</span> -s /usr/local/lib/java-1.8/jdk1.8.0_211/bin/java /usr/local/bin/java
+
+<span class="token builtin class-name">echo</span> <span class="token string">'export JAVA_HOME=/usr/local/lib/java-1.8/jdk1.8.0_211'</span> <span class="token operator">&gt;&gt;</span> /etc/profile
+<span class="token builtin class-name">echo</span> <span class="token string">'export PATH=<span class="token environment constant">$PATH</span>:<span class="token variable">$JAVA_HOME</span>/bin'</span> <span class="token operator">&gt;&gt;</span> /etc/profile
+<span class="token builtin class-name">source</span> /etc/profile
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="redis-安装"><a href="#redis-安装" class="header-anchor">#</a> redis 安装</h2> <p>下载地址：<a href="https://redis.io/download" target="_blank" rel="noopener noreferrer">https://redis.io/download<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>下载好后上传到服务器的/data目录</p> <p>本次安装版本：5.0.4</p> <p>6+版本的redis服务器不支持安装</p> <p>需要安装的服务器有</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="开通端口访问"><a href="#开通端口访问" class="header-anchor">#</a> 开通端口访问</h3> <p>三台服务器都需要开通</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> firewall-cmd --add-port=7000-7002/tcp --permanent &amp;&amp;  firewall-cmd --reload
+ firewall-cmd --add-port=17000-17002/tcp --permanent &amp;&amp;  firewall-cmd --reload
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="安装-3"><a href="#安装-3" class="header-anchor">#</a> 安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xzvf /data/redis-5.0.4.tar.gz -C /data
+<span class="token builtin class-name">cd</span> /data/redis-5.0.4 <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h3> <p>本次安装采用集群模式，每个服务器运行三个redis集群节点，分别为7000,7001,7002。首先创建redis的数据目录,创建默认的配置</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> /data/redis/7000 -p <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> /data/redis/7001 -p <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> /data/redis/7002 -p
+<span class="token function">cp</span> /data/redis-5.0.4/redis.conf /data/redis/redis.7000.conf
+<span class="token function">vim</span> /data/redis/redis.7000.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>修改7000端口的默认配置</p> <ol><li>69行修改bind为：<code>bind 0.0.0.0</code></li> <li>92行修改port为：<code>port 7000</code></li> <li>136行修改daemonize为：<code>daemonize yes</code></li> <li>158行修改pidfile为：<code>pidfile /var/run/redis_7000.pid</code></li> <li>186行修改databases：<code>databases 1</code></li> <li>263行修改dir：<code>dir /data/redis/7000</code></li> <li>507行修改requirepass：<code>requirepass redis@2021</code></li> <li>699行修改appendonly： <code>appendonly yes</code></li> <li>838行修改cluster-enabled：<code>cluster-enabled yes</code></li> <li>846行修改cluster-config-file：<code>cluster-config-file nodes-7000.conf</code></li></ol> <p>同理创建<em>redis.7001.conf</em>以及**redis.7002.conf*文件，修改配置中7000的配置为相应的7001和7002</p> <h3 id="启动-2"><a href="#启动-2" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>redis-server /data/redis/redis.7000.conf <span class="token operator">&amp;&amp;</span> redis-server /data/redis/redis.7001.conf <span class="token operator">&amp;&amp;</span> redis-server /data/redis/redis.7002.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="创建集群"><a href="#创建集群" class="header-anchor">#</a> 创建集群</h3> <p>在三台服务器都进行了如上步骤时即可启动集群，在任意一台执行以下命令即可</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>redis-cli -a redis@2021 --cluster create <span class="token number">10.154</span>.73.11:7000 <span class="token number">10.154</span>.73.11:7001 <span class="token number">10.154</span>.73.11:7002 <span class="token number">10.154</span>.73.12:7000 <span class="token number">10.154</span>.73.12:7001 <span class="token number">10.154</span>.73.12:7002 <span class="token number">10.154</span>.73.13:7000 <span class="token number">10.154</span>.73.13:7001 <span class="token number">10.154</span>.73.13:7002 --cluster-replicas <span class="token number">2</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查看集群状态</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>redis-cli -a redis@2021 --cluster info <span class="token number">10.154</span>.73.11:7000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="zookeeper-安装"><a href="#zookeeper-安装" class="header-anchor">#</a> zookeeper 安装</h2> <p>本次安装zookeeper版本为：3.5.5</p> <p>上传文件到服务器的/data目录</p> <p>需要安装的服务器有</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="开放端口-2"><a href="#开放端口-2" class="header-anchor">#</a> 开放端口</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>firewall-cmd --add-port<span class="token operator">=</span><span class="token number">2181</span>/tcp --permanent <span class="token operator">&amp;&amp;</span>  firewall-cmd --add-port<span class="token operator">=</span><span class="token number">2888</span>/tcp --permanent <span class="token operator">&amp;&amp;</span>  firewall-cmd --add-port<span class="token operator">=</span><span class="token number">3888</span>/tcp --permanent <span class="token operator">&amp;&amp;</span>  firewall-cmd --reload
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="安装-4"><a href="#安装-4" class="header-anchor">#</a> 安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xzvf /data/apache-zookeeper-3.5.5-bin.tar.gz -C /data
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="配置-2"><a href="#配置-2" class="header-anchor">#</a> 配置</h3> <p>复制配置模板</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">cp</span> /data/apache-zookeeper-3.5.5-bin/conf/zoo_sample.cfg /data/apache-zookeeper-3.5.5-bin/conf/zoo.cfg
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>修改配置如下：</p> <div class="language- extra-class"><pre><code>1. 12行：`dataDir=/data/zookeeper`
+</code></pre></div><p>添加配置如下:</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>server.11<span class="token operator">=</span><span class="token number">10.154</span>.73.11:2888:3888
+server.12<span class="token operator">=</span><span class="token number">10.154</span>.73.12:2888:3888
+server.13<span class="token operator">=</span><span class="token number">10.154</span>.73.13:2888:3888
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="启动-3"><a href="#启动-3" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> /data/zookeeper
+<span class="token builtin class-name">echo</span> <span class="token number">11</span> <span class="token operator">&gt;</span> /data/zookeeper/myid <span class="token comment">#设置id，为服务器ip最后网段,即11在三台服务器分别对应11，12,13</span>
+/data/apache-zookeeper-3.5.5-bin/bin/zkServer.sh start
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="查看集群状态"><a href="#查看集群状态" class="header-anchor">#</a> 查看集群状态</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/data/apache-zookeeper-3.5.5-bin/bin/zkServer.sh status
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="elasticsearch-安装"><a href="#elasticsearch-安装" class="header-anchor">#</a> elasticsearch 安装</h2> <p>本次安装的版本为：7.7.1</p> <p>需要安装的服务器有</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="创建用户"><a href="#创建用户" class="header-anchor">#</a> 创建用户</h3> <p>因<code>Elasticsearch</code>不能在root用户下运行,需要创建新的用户</p> <div class="language-sheel line-numbers-mode"><pre class="language-text"><code>groupadd -g 9200 elasticsearch
+useradd -u 9200 -g elasticsearch -d /home/elasticsearch elasticsearch
+passwd elasticsearch # 密码elastic@2021
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="创建目录并赋权"><a href="#创建目录并赋权" class="header-anchor">#</a> 创建目录并赋权</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xzvf /data/elasticsearch-7.7.1-linux-x86_64.tar.gz -C /data
+<span class="token function">mkdir</span> -p /data/elasticsearch/data <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> -p /data/elasticsearch/log <span class="token operator">&amp;&amp;</span> <span class="token function">chown</span> -R elasticsearch:elasticsearch /data/elasticsearch
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="修改系统配置文件"><a href="#修改系统配置文件" class="header-anchor">#</a> 修改系统配置文件</h3> <p>为以下配置文件添加各自的属性，然后重新登录</p> <ol><li><code>/etc/sysctl.conf</code> <ol><li><code>vm.max_map_count=655300</code></li></ol></li> <li><code>/etc/security/limits.conf</code> <ol><li><code>* soft nofile 65536</code></li> <li><code>* hard nofile 65536</code></li> <li><code>* hard memlock unlimited</code></li> <li><code>* soft memlock unlimited</code></li></ol></li></ol> <h3 id="修改配置文件"><a href="#修改配置文件" class="header-anchor">#</a> 修改配置文件</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">vim</span> /data/elasticsearch-7.7.1/config/elasticsearch.yml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="mysql-安装"><a href="#mysql-安装" class="header-anchor">#</a> mysql 安装</h2> <p>本次安装版本为：5.7.26</p> <p>上传文件到数据库服务器：</p> <div class="language- extra-class"><pre><code>1. 10.154.73.14
+2. 10.154.73.15
+</code></pre></div><h3 id="开放端口-3"><a href="#开放端口-3" class="header-anchor">#</a> 开放端口</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>firewall-cmd --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp --permanent <span class="token operator">&amp;&amp;</span>  firewall-cmd --reload
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="升级系统"><a href="#升级系统" class="header-anchor">#</a> 升级系统</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>yum update -y
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="安装-5"><a href="#安装-5" class="header-anchor">#</a> 安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> /data/mysql-rpm <span class="token operator">&amp;&amp;</span> <span class="token function">tar</span> -xvf /data/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar -C /data/mysql-rpm <span class="token comment">#解压</span>
+yum <span class="token function">install</span> -y openssl-devel net-tools perl-JSON autoconf <span class="token comment">#安装依赖</span>
+<span class="token function">rpm</span> -qa<span class="token operator">|</span><span class="token function">grep</span> mariadb <span class="token comment">#查询是否安装了mariadb，如果安装了则需要卸载</span>
+<span class="token function">rpm</span> -e --nodeps mariadb-libs-5.5.68-1.el7.x86_64 <span class="token comment">#卸载</span>
+<span class="token builtin class-name">cd</span> /data/mysql-rpm <span class="token operator">&amp;&amp;</span> <span class="token function">rpm</span> -ivh mysql-community-<span class="token punctuation">{</span>common,libs,libs-compat,client,devel,server,embedded-compat,embedded-devel,embedded<span class="token punctuation">}</span>-5.7.26-1.el7.x86_64.rpm <span class="token comment">#安装</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="创建数据目录"><a href="#创建数据目录" class="header-anchor">#</a> 创建数据目录</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> -p /data/mysql/data
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="修改配置文件-2"><a href="#修改配置文件-2" class="header-anchor">#</a> 修改配置文件</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">vim</span> /etc/my.cnf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol><li>20行：<code>datadir=/data/mysql/data</code></li> <li>26行：<code>log-error=/data/mysql/mysqld.log</code></li> <li>28行：<code>lower_case_table_names=1</code></li></ol> <h3 id="初始化数据库"><a href="#初始化数据库" class="header-anchor">#</a> 初始化数据库</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>mysqld --initialize --user<span class="token operator">=</span>root --datadir<span class="token operator">=</span>/data/mysql/data --explicit_defaults_for_timestamp  <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> -R <span class="token number">777</span> /data/mysql/*
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="启动-4"><a href="#启动-4" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>systemctl start  mysqld
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="查看默认密码"><a href="#查看默认密码" class="header-anchor">#</a> 查看默认密码</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">grep</span> <span class="token string">'temporary password'</span> /data/mysql/mysqld.log
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="修改默认密码"><a href="#修改默认密码" class="header-anchor">#</a> 修改默认密码</h3> <p>使用默认密码登录后修改密码</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>mysql -uroot -p
+ALTER <span class="token environment constant">USER</span> user<span class="token punctuation">(</span><span class="token punctuation">)</span> IDENTIFIED BY <span class="token string">'kZfDYTCUmsqj2XBA'</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="创建应用数据库"><a href="#创建应用数据库" class="header-anchor">#</a> 创建应用数据库</h3> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>create user zngh@'%' IDENTIFIED WITH 'mysql_native_password' BY 'sHvMu5C3fJYolagh';
+create database zngh CHARACTER SET utf8 COLLATE utf8_general_ci;
+grant all privileges on zngh.* to zngh;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="配置主从复制"><a href="#配置主从复制" class="header-anchor">#</a> 配置主从复制</h3> <p>以下操作需要连接数据库后操作</p> <ol><li>创建用于同步数据的账号</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>grant replication slave on *.* to <span class="token string">'replicate'</span> identified by <span class="token string">'9FurhTCnIwZtAgqR'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="_14数据库"><a href="#_14数据库" class="header-anchor">#</a> 14数据库</h4> <h5 id="配置修改"><a href="#配置修改" class="header-anchor">#</a> 配置修改</h5> <p>vim /etc/my.cnf</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># For advice on how to change settings please see</span>
+<span class="token comment"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span>
+<span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token assign-left variable">default_character_set</span><span class="token operator">=</span>utf8mb4
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+collation_server <span class="token operator">=</span> utf8mb4_general_ci
+character_set_server <span class="token operator">=</span> utf8mb4
+
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # and set to the amount of RAM for the most important data</span>
+<span class="token comment"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span>
+<span class="token comment"># innodb_buffer_pool_size = 128M</span>
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # to turn on a very important data integrity option: logging</span>
+<span class="token comment"># changes to the binary log between backups.</span>
+<span class="token assign-left variable">log_bin</span><span class="token operator">=</span>mysql-bin
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # to set options mainly useful for reporting servers.</span>
+<span class="token comment"># The server defaults are faster for transactions and fast SELECTs.</span>
+<span class="token comment"># Adjust sizes as needed, experiment to find the optimal values.</span>
+<span class="token comment"># join_buffer_size = 128M</span>
+<span class="token comment"># sort_buffer_size = 2M</span>
+<span class="token comment"># read_rnd_buffer_size = 2M</span>
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/data/mysql/data
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/var/lib/mysql/mysql.sock
+
+<span class="token comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span><span class="token number">0</span>
+
+log-error<span class="token operator">=</span>/data/mysql/mysqld.log
+pid-file<span class="token operator">=</span>/var/run/mysqld/mysqld.pid
+
+
+binlog-format<span class="token operator">=</span>mixed
+
+<span class="token comment">#主标服务标识号,必需唯一</span>
+server-id<span class="token operator">=</span><span class="token number">14</span>
+<span class="token comment"># 忽略大小写</span>
+<span class="token assign-left variable">lower_case_table_names</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 记录日志的数据库</span>
+binlog-do-db<span class="token operator">=</span>zngh
+
+<span class="token comment">#不记录日志的库,即不需要同步的库</span>
+
+binlog-ignore-db<span class="token operator">=</span>mysql
+<span class="token comment">#用从属服务器上的日志功能</span>
+
+log-slave-updates
+
+<span class="token comment">#经过1日志写操作就把日志文件写入硬盘一次(对日志信息进行一次同步)。n=1是最安全的做法，但效率最低。默认设置是n=0。</span>
+
+<span class="token assign-left variable">sync_binlog</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token comment"># auto_increment，控制自增列AUTO_INCREMENT的行为</span>
+
+<span class="token comment"># auto_increment_offset＝1设置步长,这里设置为1,这样Master的auto_increment字段产生的数值是:1, 3, 5, 7, …等奇数ID</span>
+<span class="token assign-left variable">auto_increment_offset</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># auto_increment_increment=n有多少台服务器，n就设置为多少</span>
+<span class="token assign-left variable">auto_increment_increment</span><span class="token operator">=</span><span class="token number">2</span>
+
+<span class="token comment">#进行镜像处理的数据库</span>
+
+replicate-do-db <span class="token operator">=</span> zngh
+
+<span class="token comment">#不进行镜像处理的数据库</span>
+
+replicate-ignore-db<span class="token operator">=</span> mysql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><h5 id="查看15数据库偏移"><a href="#查看15数据库偏移" class="header-anchor">#</a> 查看15数据库偏移</h5> <p>root账号进入15数据库查看偏移量</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>mysql <span class="token operator">&gt;</span> show master status<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-mysql line-numbers-mode"><pre class="language-text"><code>+------------------+----------+--------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+--------------+------------------+-------------------+
+| mysql-bin.000003 |      154 | zngh         | mysql            |                   |
++------------------+----------+--------------+------------------+-------------------+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h5 id="_14数据库设置同步"><a href="#_14数据库设置同步" class="header-anchor">#</a> 14数据库设置同步</h5> <p>其中master_log_file和master_log_pos的值来源于另外一台数据库的偏移量结果</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>stop slave;
+change master to master_host='10.154.73.15', master_user='replicate', master_password='9FurhTCnIwZtAgqR', master_log_file='mysql-bin.000003', master_log_pos=154;
+start slave;
+show slave status\G;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="_15数据库"><a href="#_15数据库" class="header-anchor">#</a> 15数据库</h4> <h5 id="配置修改-2"><a href="#配置修改-2" class="header-anchor">#</a> 配置修改</h5> <p>vim /etc/my.cnf</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># For advice on how to change settings please see</span>
+<span class="token comment"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span>
+
+<span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token assign-left variable">default_character_set</span><span class="token operator">=</span>utf8mb4
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+collation_server <span class="token operator">=</span> utf8mb4_general_ci
+character_set_server <span class="token operator">=</span> utf8mb4
+
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # and set to the amount of RAM for the most important data</span>
+<span class="token comment"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span>
+<span class="token comment"># innodb_buffer_pool_size = 128M</span>
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # to turn on a very important data integrity option: logging</span>
+<span class="token comment"># changes to the binary log between backups.</span>
+<span class="token assign-left variable">log_bin</span><span class="token operator">=</span>mysql-bin
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # to set options mainly useful for reporting servers.</span>
+<span class="token comment"># The server defaults are faster for transactions and fast SELECTs.</span>
+<span class="token comment"># Adjust sizes as needed, experiment to find the optimal values.</span>
+<span class="token comment"># join_buffer_size = 128M</span>
+<span class="token comment"># sort_buffer_size = 2M</span>
+<span class="token comment"># read_rnd_buffer_size = 2M</span>
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/data/mysql/data
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/var/lib/mysql/mysql.sock
+
+<span class="token comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span><span class="token number">0</span>
+
+log-error<span class="token operator">=</span>/data/mysql/mysqld.log
+pid-file<span class="token operator">=</span>/var/run/mysqld/mysqld.pid
+
+
+binlog-format<span class="token operator">=</span>mixed
+
+<span class="token comment">#主标服务标识号,必需唯一</span>
+server-id<span class="token operator">=</span><span class="token number">15</span>
+<span class="token comment"># 忽略大小写</span>
+<span class="token assign-left variable">lower_case_table_names</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 记录日志的数据库</span>
+binlog-do-db<span class="token operator">=</span>zngh
+
+<span class="token comment">#不记录日志的库,即不需要同步的库</span>
+
+binlog-ignore-db<span class="token operator">=</span>mysql
+<span class="token comment">#用从属服务器上的日志功能</span>
+
+log-slave-updates
+
+<span class="token comment">#经过1日志写操作就把日志文件写入硬盘一次(对日志信息进行一次同步)。n=1是最安全的做法，但效率最低。默认设置是n=0。</span>
+
+<span class="token assign-left variable">sync_binlog</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token comment"># auto_increment，控制自增列AUTO_INCREMENT的行为</span>
+<span class="token comment"># auto_increment_offset＝1设置步长,这里设置为1,这样Master的auto_increment字段产生的数值是:1, 3, 5, 7, …等奇数ID</span>
+<span class="token assign-left variable">auto_increment_offset</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># auto_increment_increment=n有多少台服务器，n就设置为多少</span>
+<span class="token assign-left variable">auto_increment_increment</span><span class="token operator">=</span><span class="token number">2</span>
+
+<span class="token comment">#进行镜像处理的数据库</span>
+
+replicate-do-db <span class="token operator">=</span> zngh
+
+<span class="token comment">#不进行镜像处理的数据库</span>
+
+replicate-ignore-db<span class="token operator">=</span> mysql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><h5 id="查看14数据库偏移"><a href="#查看14数据库偏移" class="header-anchor">#</a> 查看14数据库偏移</h5> <p>root账号进入14数据库查看偏移量</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>mysql <span class="token operator">&gt;</span> show master status<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-mysql line-numbers-mode"><pre class="language-text"><code>+------------------+----------+--------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+--------------+------------------+-------------------+
+| mysql-bin.000004 |  1258644 | zngh         | mysql            |                   |
++------------------+----------+--------------+------------------+-------------------
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h5 id="_15数据库设置同步"><a href="#_15数据库设置同步" class="header-anchor">#</a> 15数据库设置同步</h5> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>stop slave;
+change master to master_host='10.154.73.14', master_user='replicate', master_password='9FurhTCnIwZtAgqR', master_log_file='mysql-bin.000004', master_log_pos=1258644;
+start slave;
+show slave status\G;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="fastfds-文件服务器"><a href="#fastfds-文件服务器" class="header-anchor">#</a> fastfds 文件服务器</h2> <p>上传文件到服务器的/data目录</p> <p>需要安装的服务器有</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="开放端口-4"><a href="#开放端口-4" class="header-anchor">#</a> 开放端口</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code> firewall-cmd --add-port<span class="token operator">=</span><span class="token number">22122</span>/tcp --permanent <span class="token operator">&amp;&amp;</span>  firewall-cmd --add-port<span class="token operator">=</span><span class="token number">23000</span>/tcp --permanent <span class="token operator">&amp;&amp;</span> firewall-cmd --reload
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="解压安装"><a href="#解压安装" class="header-anchor">#</a> 解压安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>yum <span class="token function">install</span> <span class="token function">unzip</span> -y
+<span class="token function">unzip</span> /data/libfastcommon-master.zip -d /data/fastdfs
+<span class="token function">unzip</span> /data/fastdfs-master.zip -d /data/fastdfs
+<span class="token builtin class-name">cd</span> /data/fastdfs/libfastcommon-master/ <span class="token operator">&amp;&amp;</span> ./make.sh <span class="token operator">&amp;&amp;</span> ./make.sh <span class="token function">install</span> 
+<span class="token builtin class-name">cd</span> /data/fastdfs/fastdfs-master/ <span class="token operator">&amp;&amp;</span> ./make.sh <span class="token operator">&amp;&amp;</span> ./make.sh <span class="token function">install</span>
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="创建文件夹"><a href="#创建文件夹" class="header-anchor">#</a> 创建文件夹</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> -p /data/fastdfs/data/tracker
+<span class="token function">mkdir</span> -p /data/fastdfs/data/storage
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="拷贝配置文件"><a href="#拷贝配置文件" class="header-anchor">#</a> 拷贝配置文件</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">cp</span> /etc/fdfs/tracker.conf.sample /etc/fdfs/tracker.conf <span class="token operator">&amp;&amp;</span> <span class="token function">cp</span> /etc/fdfs/storage.conf.sample /etc/fdfs/storage.conf <span class="token operator">&amp;&amp;</span> <span class="token function">cp</span> /etc/fdfs/client.conf.sample /etc/fdfs/client.conf
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="配置tracker"><a href="#配置tracker" class="header-anchor">#</a> 配置tracker</h3> <p>修改配置文件*/etc/fdfs/tracker.conf* 修改位置有</p> <div class="language- extra-class"><pre><code>1. 22行：`base_path=/data/fastdfs/data/tracker`
+2. 54行：`store_group=group`
+3. 98行：`run_by_group=root`
+4. 102行：`run_by_user=root`
+</code></pre></div><h3 id="配置storage"><a href="#配置storage" class="header-anchor">#</a> 配置storage</h3> <p>修改配置文件*/etc/fdfs/storage.conf* 修改位置有</p> <ol><li>11行：<code>group_name=group</code></li> <li>41行：<code>base_path=/data/fastdfs/data/storage</code></li> <li>111行：<code>store_path0=/data/fastdfs/data/storage</code></li> <li>119行：<code>tracker_server=10.154.73.11:22122,10.154.73.12:22122,10.154.73.13:22122</code></li> <li>134行：<code>run_by_group=root</code></li> <li>138行：<code>run_by_user=root</code></li></ol> <h3 id="启动-5"><a href="#启动-5" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start <span class="token operator">&amp;&amp;</span> /usr/bin/fdfs_storaged /etc/fdfs/storage.conf start
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="查看集群状态-2"><a href="#查看集群状态-2" class="header-anchor">#</a> 查看集群状态</h3> <p>在10.154.73.11服务器上查看状态</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>fdfs_monitor /etc/fdfs/client.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="kafka-安装"><a href="#kafka-安装" class="header-anchor">#</a> kafka 安装</h2> <h3 id="开放端口-5"><a href="#开放端口-5" class="header-anchor">#</a> 开放端口</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>firewall-cmd --add-port<span class="token operator">=</span><span class="token number">9093</span>/tcp --permanent <span class="token operator">&amp;&amp;</span> firewall-cmd --reload
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>本次安装版本为：2.12</p> <p>需要安装的服务器有</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="安装-6"><a href="#安装-6" class="header-anchor">#</a> 安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xvf /data/kafka_2.12-2.5.0.tgz -C /data
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="修改配置文件-3"><a href="#修改配置文件-3" class="header-anchor">#</a> 修改配置文件</h3> <p>修改配置文件 <code>vim /data/kafka_2.12-2.5.0/config/server.properties</code></p> <ol><li>21行：<code>broker.id=11</code> 每台服务器不一样</li> <li>31行：<code>listeners=PLAINTEXT://10.154.73.11:9092</code> 每台服务器不一样</li> <li>60行：<code>log.dirs=/data/kafka/kafka-logs</code></li> <li>123行：<code>10.154.73.11:2181,10.154.73.12:2181,10.154.73.13:2181/kafka</code></li> <li>126行：<code>zookeeper.connection.timeout.ms=60000</code></li> <li></li></ol> <h3 id="启动-6"><a href="#启动-6" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/data/kafka_2.12-2.5.0/bin/kafka-server-start.sh -daemon  /data/kafka_2.12-2.5.0/config/server.properties
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="kkfileview-文件预览服务器"><a href="#kkfileview-文件预览服务器" class="header-anchor">#</a> kkFileView 文件预览服务器</h2> <p>上传文件到服务器/data目录</p> <h3 id="开放端口-6"><a href="#开放端口-6" class="header-anchor">#</a> 开放端口</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code> firewall-cmd --add-port<span class="token operator">=</span><span class="token number">7205</span>/tcp --permanent <span class="token operator">&amp;&amp;</span> firewall-cmd --reload
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="安装-7"><a href="#安装-7" class="header-anchor">#</a> 安装</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">unzip</span> /data/kkFileView-2.2.1.zip -d /data
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="修改配置"><a href="#修改配置" class="header-anchor">#</a> 修改配置</h3> <p>修改配置文件：<code>vim /data/kkFileView-2.2.1/config/application.properties</code></p> <ol><li>2行：<code>server.port = ${KK_SERVER_PORT:7205}</code></li> <li>30行：<code>cache.type = ${KK_CACHE_TYPE:default}</code></li> <li>97行：<code>union.module.file.fastdfs.tracker-servers=10.154.73.11:22122,10.154.73.12:22122,10.154.73.13:22122</code></li></ol> <h3 id="安装openoffice"><a href="#安装openoffice" class="header-anchor">#</a> 安装openoffice</h3> <ol><li><p>上传文件到/data目录</p></li> <li><p>安装</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xzvf Apache_OpenOffice_4.1.7_Linux_x86-64_install-rpm_zh-CN.tar.gz -C /data
+<span class="token function">rpm</span> -Uvih /data/zh-CN/RPMS/*.rpm
+<span class="token function">rpm</span> -Uvih /data/zh-CN/RPMS/desktop-integration/openoffice4.1.7-redhat-menus-4.1.7-9800.noarch.rpm
+yum <span class="token function">install</span> xorg-x11-server-Xvfb -y
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ol> <h3 id="启动-7"><a href="#启动-7" class="header-anchor">#</a> 启动</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/data/kkFileView-2.2.1/bin/startup.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="上传启动脚本"><a href="#上传启动脚本" class="header-anchor">#</a> 上传启动脚本</h2> <p>需要执行的服务器为应用服务器：</p> <ol><li>10.154.73.11</li> <li>10.154.73.12</li> <li>10.154.73.13</li></ol> <h3 id="创建目录"><a href="#创建目录" class="header-anchor">#</a> 创建目录</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">mkdir</span> -p /data/union/znpro/log <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> /shareddisk/union
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="启动脚本"><a href="#启动脚本" class="header-anchor">#</a> 启动脚本</h3> <p>用于启动单个应用</p> <p>脚本名称为：/shareddisk/union/springbootstartup.sh</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">vim</span> /shareddisk/union/springbootstartup.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>内容为：union.env.zookeeper为zookeeper地址需要根据情况替换</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#!/bin/sh</span>
+<span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token number">1.0</span>.0
+<span class="token keyword">while</span> <span class="token builtin class-name">getopts</span> <span class="token string">&quot;:a:p:n:f:v&quot;</span> opt
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token variable">$opt</span> <span class="token keyword">in</span>
+    	<span class="token comment">#启动端口</span>
+        a<span class="token punctuation">)</span>
+		<span class="token assign-left variable">active</span><span class="token operator">=</span><span class="token variable">$OPTARG</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;启动环境的值：<span class="token variable">$OPTARG</span>&quot;</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    	<span class="token comment">#启动端口</span>
+        p<span class="token punctuation">)</span>
+		<span class="token assign-left variable">startup_port</span><span class="token operator">=</span><span class="token variable">$OPTARG</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;启动端口的值：<span class="token variable">$OPTARG</span>&quot;</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token comment">#服务名称</span>
+        n<span class="token punctuation">)</span>
+		<span class="token assign-left variable">server_name</span><span class="token operator">=</span><span class="token variable">$OPTARG</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;启动服务名称的值：<span class="token variable">$OPTARG</span>&quot;</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token comment">#文件路径</span>
+        f<span class="token punctuation">)</span>
+		<span class="token assign-left variable">path_name</span><span class="token operator">=</span><span class="token variable">$OPTARG</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;文件路径为：<span class="token variable">$OPTARG</span>&quot;</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token function">v</span><span class="token punctuation">)</span>
+        <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token variable">$OPTARG</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;版本为：<span class="token variable">$OPTARG</span>&quot;</span>
+    <span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+<span class="token builtin class-name">cd</span> <span class="token variable">$path_name</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Stopping SpringBoot Application&quot;</span>
+<span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> union-module-$server_name-$version-SNAPSHOT.jar <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span><span class="token function">grep</span> $startup_port <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">$2</span>}'</span><span class="token variable">`</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$pid</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+   <span class="token function">kill</span> -9 <span class="token variable">$pid</span>
+<span class="token keyword">fi</span>
+<span class="token function">rm</span> -rf <span class="token variable">$path_name</span>/log/<span class="token variable">$server_name</span>-<span class="token variable">$startup_port</span>*.log
+<span class="token function">sleep</span> 1s
+<span class="token function">nohup</span> java -Xms200m -Xmx1000m -Xss256k -XX:ParallelGCThreads<span class="token operator">=</span><span class="token number">2</span> -Djava.compiler<span class="token operator">=</span>NONE -XX:+UseParallelOldGC -jar <span class="token variable">$path_name</span>/union-module-<span class="token variable">$server_name</span>-<span class="token variable">$version</span>-SNAPSHOT.jar --union.env.zookeeper<span class="token operator">=</span><span class="token number">10.154</span>.73.11:2181,10.154.73.12:2181,10.154.73.13:2181 --server.port<span class="token operator">=</span><span class="token variable">$startup_port</span> --spring.profiles.active<span class="token operator">=</span><span class="token variable">$active</span>  --spring.cloud.zookeeper.config.root<span class="token operator">=</span>union_config_<span class="token variable">$active</span><span class="token operator">&gt;&gt;</span><span class="token variable">$path_name</span>/log/<span class="token variable">$server_name</span>-<span class="token variable">$startup_port</span>-<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%Y-%m-%d<span class="token variable">`</span></span>.log <span class="token operator">&amp;</span> <span class="token operator">&gt;&gt;</span><span class="token number">1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><h3 id="批量运行脚本"><a href="#批量运行脚本" class="header-anchor">#</a> 批量运行脚本</h3> <p>用于启动所有应用</p> <p>脚本名称为：/shareddisk/union/startup.sh</p> <p>脚本内容为：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#!/bin/sh</span>
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8040</span> -n activiti-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8155</span> -n auto-component-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8016</span> -n configcenter-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8015</span> -n eureka-server-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8035</span> -n gateway-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8025</span> -n oauth2-server-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8060</span> -n public-service-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8185</span> -n operation-log-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8215</span> -n message-manager-service-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8230</span> -n base-union-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8235</span> -n base-difficult-help-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8220</span> -n membercost-capture-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8265</span> -n base-staff-user-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8255</span> -n base-democratic-management-platform-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8245</span> -n base-funds-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8260</span> -n base-model-worker-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8250</span> -n base-women-staff-starter -f /bak/union/znpro
+/shareddisk/union/springbootstartup.sh -a znpro -p <span class="token number">8270</span> -n base-culturalsports-starter -f /bak/union/znpro
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="执行赋权"><a href="#执行赋权" class="header-anchor">#</a> 执行赋权</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">chmod</span> +x /shareddisk/union/springbootstartup.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x /shareddisk/union/startup.sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.0cb9d00b.js" defer></script><script src="/blog/assets/js/2.d26acfa2.js" defer></script><script src="/blog/assets/js/14.0983790a.js" defer></script>
+  </body>
+</html>
